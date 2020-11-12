@@ -4,6 +4,7 @@ card.addEventListener('click', function() {
   card.classList.add('is-flipped');
 });
 
+var songName = document.getElementById('files').innerHTML;
 
 var audio = document.getElementById("theAudio");
 var context = new (window.AudioContext || window.webkitAudioContext)();
@@ -115,12 +116,15 @@ function draw() {
 $(document).ready(function(){
     $("#pause").hide();
     $("#mute").hide();
+    $("#duration").hide();
 
-    // displays file name
+    // displays file name and reset slider
     $('input[type="file"]').change(function(e) {
         var file = this.files[0];
         var fileName = e.target.files[0].name;
         $("#files").html(fileName);
+        audio.currentTime = 0;
+        $("#progressbar").slider('value', audio.currentTime);
         if (file.type.indexOf('audio/') !== 0) {
             this.value = null;
             if (!alertify.errorAlert) {
@@ -139,6 +143,14 @@ $(document).ready(function(){
             alertify.errorAlert("This is not a valid audio file.");
             $("#files").html("");
         }
+        // hide duration text if there is no audio file uploaded
+        if ($('#files').is(':empty')) {
+            $("#duration").hide();
+        }
+
+        else {
+            $("#duration").show();
+        }
     });
 
     $('#thefile').on('change', handleFileSelect);
@@ -148,6 +160,24 @@ $(document).ready(function(){
         audio.play();
         $("#pause").show();
         $(this).hide();
+        if ($('#files').is(':empty')) {
+            if (!alertify.errorAlert) {
+                // alert for no audio files detected
+                alertify.dialog('errorAlert',function factory() {
+                  return {
+                          build: function() {
+                            var errorHeader = '<span class="fa fa-times-circle fa-2x" '
+                            +    'style="vertical-align:middle;color:#e10000;">'
+                            + '</span> Music Player Error';
+                            this.setHeader(errorHeader);
+                          }
+                      };
+                }, true,'alert');
+            }
+            alertify.errorAlert("No audio files detected.");
+            $("#play").show();
+            $("#pause").hide();
+        }
         draw();
     });
 
