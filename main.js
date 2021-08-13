@@ -188,6 +188,7 @@ $(document).ready(function(){
         $(this).hide();
     });
 
+    // pauses audio when user is trying to change songs
     $('#file-input').click(function() {
         audio.pause();
         $("#play").show();
@@ -255,7 +256,7 @@ $(document).ready(function(){
     // function progress bar of song duration
     function progress() {
         $("#progressbar").slider('value', Math.floor((100 / audio.duration) * audio.currentTime));
-        $("#duration").text(getTime(audio.currentTime));
+        $("#duration").text(getTime(audio.currentTime) + " / " + getTime(audio.duration));
     }
 
     // volume settings of the music player
