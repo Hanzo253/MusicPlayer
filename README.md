@@ -11,5 +11,6 @@ Project Specifications:
 - Song Loop button implemented
 - Volume bar and mute button implemented
 - While a song is playing, audio visualizers are displayed
+- Song name, duration, and current time are shown
 
 Link to application: https://hanzo253.github.io/MusicPlayer/
