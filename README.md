@@ -1,4 +1,4 @@
-Music Player
+# Music Player
 
 Music player application created with HTML, CSS, JavaScript, jQuery, and Bootstrap.
 
