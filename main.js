@@ -143,14 +143,18 @@ $(document).ready(function(){
             alertify.errorAlert("This is not a valid audio file.");
             $("#files").html("");
         }
-        // hide duration text if there is no audio file uploaded
-        if ($('#files').is(':empty')) {
-            $("#duration").hide();
-        }
+        
+        // // hide duration text if there is no audio file uploaded
+        // if ($('#files').is(':empty')) {
+        //     $("#duration").hide();
+        // }
 
-        else {
-            $("#duration").show();
-        }
+        // else {
+        //     $("#duration").show();
+        // }
+
+        // hide duration until play button is clicked
+        $("#duration").hide();
     });
 
     $('#thefile').on('change', handleFileSelect);
@@ -179,6 +183,9 @@ $(document).ready(function(){
             $("#pause").hide();
         }
         draw();
+
+        // show duration when song is playing
+        $("#duration").show();
     });
 
     // pause button

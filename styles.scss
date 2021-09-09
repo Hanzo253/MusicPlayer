@@ -81,12 +81,12 @@ input[type="file"] {
   top: 5%;
 }
 
-// p {
-//   color: white;
-//   display: block;
-//   position: relative;
-//   top: 8%;
-// }
+p {
+  color: white;
+  display: block;
+  position: relative;
+  top: 8%;
+}
 
 #alertText {
   text-align: center;
@@ -369,5 +369,39 @@ a {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+  }
+
+  #front {
+    margin-right: 10%;
+  }
+
+  .flipcard {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+  }
+
+  #front {
+    margin-right: 10%;
+  }
+
+  .flipcard {
+    width: 100%;
   }
 }
