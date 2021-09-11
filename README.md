@@ -17,7 +17,7 @@ Link to application: https://hanzo253.github.io/MusicPlayer/
 
 ## How I worked on this project
 
-- I worked with tasks on a ClickUp board: [Screenshot of tasks](https://lensdump.com/i/ZxaKvP)
+- I worked with tasks on a ClickUp board: [Screenshot of tasks](https://lensdump.com/a/gikFa)
 - I use Visual Studio Code as the IDE.
 - I used jQuery UI and Bootstrap for some UI Designs: [jQuery UI website](https://jqueryui.com/) and [Bootstrap](https://getbootstrap.com/)
 - I used alertifyjs for alerts: [alertifyjs website](https://alertifyjs.com/)
