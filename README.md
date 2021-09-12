@@ -45,3 +45,4 @@ Link to application: https://hanzo253.github.io/MusicPlayer/
 - Make a drag and drop for file uploads
 - Allow the user to upload multiple songs to play more than one song
 - Implement a next and previous button, so they can change songs
+- Add integration testing, unit testing, and end-to-end testing
